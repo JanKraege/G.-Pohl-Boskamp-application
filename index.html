@@ -381,6 +381,112 @@
     .why-highlight strong{font-size:22px;line-height:1.2}
     .why-highlight p{margin:0;opacity:.84}
 
+
+    /* Motivation / Programme Fit */
+    .motivation-wrap{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      margin-top:10px;
+    }
+    .motivation-card{
+      background:#fffdfa;
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:30px;
+      box-shadow:0 12px 34px rgba(45,52,57,.05);
+    }
+    .motivation-card.dark{
+      background:linear-gradient(145deg,#50695b,#6c8273);
+      color:#fff;
+      border:0;
+    }
+    .motivation-card .label{
+      display:inline-block;
+      margin-bottom:14px;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--wine);
+    }
+    .motivation-card.dark .label{color:#fff;opacity:.76}
+    .motivation-card h3{
+      margin:0 0 12px;
+      font-size:27px;
+      letter-spacing:-.03em;
+      line-height:1.15;
+    }
+    .motivation-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .motivation-card.dark p{color:rgba(255,255,255,.84)}
+    .motivation-card ul{
+      margin:18px 0 0;
+      padding-left:18px;
+    }
+    .motivation-card li{margin:8px 0}
+    .motivation-card.dark li{color:rgba(255,255,255,.9)}
+
+    .dual-view{
+      margin-top:22px;
+      background:linear-gradient(145deg,#fff8f2,#f6ede5);
+      border:1px solid var(--line);
+      border-radius:32px;
+      padding:30px;
+      box-shadow:0 12px 34px rgba(45,52,57,.05);
+    }
+    .dual-head{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:30px;
+      align-items:end;
+      margin-bottom:24px;
+    }
+    .dual-head h3{
+      margin:0;
+      font-size:30px;
+      letter-spacing:-.035em;
+    }
+    .dual-head p{
+      margin:0;
+      color:var(--muted);
+    }
+    .dual-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .dual-card{
+      background:#fff;
+      border:1px solid rgba(221,211,199,.86);
+      border-radius:22px;
+      padding:24px;
+    }
+    .dual-card.marketing{border-top:5px solid var(--wine)}
+    .dual-card.scm{border-top:5px solid var(--forest)}
+    .dual-card h4{
+      margin:0 0 12px;
+      font-size:21px;
+    }
+    .dual-card ul{
+      margin:0;
+      padding-left:18px;
+    }
+    .dual-card li{margin:8px 0}
+    .dual-bridge{
+      margin-top:18px;
+      padding:18px 20px;
+      border-radius:18px;
+      background:var(--ink);
+      color:#fff;
+      text-align:center;
+      font-weight:850;
+      letter-spacing:-.01em;
+    }
+
     .contact{
       background:linear-gradient(145deg,#465f51,#6d8174);
       color:#fff;
@@ -413,16 +519,16 @@
     }
 
     @media(max-width:1080px){
-      .hero,.section-head,.skills-layout,.experience-grid{grid-template-columns:1fr}
+      .hero,.section-head,.skills-layout,.experience-grid,.motivation-wrap,.dual-head{grid-template-columns:1fr}
       .journey-grid{grid-template-columns:repeat(4,1fr)}
       .journey-line{display:none}
-      .case-flow,.why-grid{grid-template-columns:1fr 1fr}
+      .case-flow,.why-grid,.dual-grid{grid-template-columns:1fr 1fr}
       .why-highlight{grid-template-columns:1fr}
       .nav-links{display:none}
     }
     @media(max-width:760px){
       .journey-grid{grid-template-columns:repeat(2,1fr)}
-      .case-flow,.why-grid,.facts-card{grid-template-columns:1fr}
+      .case-flow,.why-grid,.facts-card,.dual-grid{grid-template-columns:1fr}
       .skill-row{grid-template-columns:1fr;gap:6px}
       .soft-grid{grid-template-columns:1fr}
       .contact{flex-direction:column;align-items:flex-start}
@@ -695,6 +801,98 @@
       </div>
     </section>
 
+
+    <section id="de-programme">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Warum dieses Traineeprogramm</div>
+            <h2>Breite lernen. Verantwortung übernehmen. Den eigenen Schwerpunkt fundiert entwickeln.</h2>
+          </div>
+          <p>
+            Für meinen Berufseinstieg suche ich bewusst kein enges Spezialistenprofil, sondern ein Programm,
+            in dem ich verschiedene kaufmännische Bereiche wirklich verstehe und gleichzeitig früh eigene Aufgaben und Projekte übernehmen kann.
+          </p>
+        </div>
+
+        <div class="motivation-wrap">
+          <div class="motivation-card dark">
+            <span class="label">Warum Pohl-Boskamp</span>
+            <h3>Ein Unternehmen, in dem Marketing, Produktion und Supply Chain sichtbar zusammenkommen.</h3>
+            <p>
+              Mich reizt die Kombination aus inhabergeführtem Mittelstand, eigener Produktion,
+              starken Marken und internationaler Vermarktung. Dadurch entstehen kaufmännische Entscheidungen
+              nicht isoliert, sondern im Zusammenspiel verschiedener Funktionen.
+            </p>
+            <ul>
+              <li>Eigene Marken und Produkte statt rein abstrakter Dienstleistungen</li>
+              <li>Direkter Bezug zwischen Markt, Nachfrage, Produktion und Verfügbarkeit</li>
+              <li>Internationales Geschäft in einem mittelständischen Umfeld</li>
+              <li>Produkte mit konkretem Nutzen für Patienten</li>
+            </ul>
+          </div>
+
+          <div class="motivation-card">
+            <span class="label">Warum das Traineeprogramm</span>
+            <h3>Genau die Breite, die ich am Anfang meiner Karriere suche.</h3>
+            <p>
+              Besonders attraktiv finde ich, dass ich nicht nur einen Bereich kennenlerne,
+              sondern Einblicke in Logistik, Einkauf, Controlling, Digital Marketing und Brandmanagement bekomme
+              und dabei gleichzeitig im Tagesgeschäft und an eigenen Projekten mitarbeite.
+            </p>
+            <ul>
+              <li>End-to-end Verständnis statt isolierter Funktion</li>
+              <li>Frühe Verantwortung und konkrete Projektarbeit</li>
+              <li>Prozessverbesserungen nicht nur analysieren, sondern begleiten</li>
+              <li>Langfristig fundierter entscheiden, wo ich den größten Beitrag leisten kann</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dual-view">
+          <div class="dual-head">
+            <div>
+              <div class="kicker">Zwei Perspektiven</div>
+              <h3>Marketing & Vertrieb als Schwerpunkt. Supply Chain als bewusstes zweites Interesse.</h3>
+            </div>
+            <p>
+              Meine praktische Erfahrung ist im Marketing am stärksten.
+              Gleichzeitig beschäftigt mich Supply Chain bereits seit Studium und Bachelorarbeit.
+              Für ein produzierendes Pharmaunternehmen finde ich genau diese Verbindung besonders spannend.
+            </p>
+          </div>
+
+          <div class="dual-grid">
+            <div class="dual-card marketing">
+              <h4>Marketing & Vertrieb</h4>
+              <ul>
+                <li>Kunden und Märkte verstehen</li>
+                <li>Marken und Angebote weiterentwickeln</li>
+                <li>Marktpotenziale erkennen</li>
+                <li>Kampagnen und CRM-Maßnahmen umsetzen</li>
+                <li>Commercial Insights in konkrete Maßnahmen übersetzen</li>
+              </ul>
+            </div>
+
+            <div class="dual-card scm">
+              <h4>Supply Chain Management</h4>
+              <ul>
+                <li>Produktverfügbarkeit und Planung verstehen</li>
+                <li>Prozesse und Schnittstellen analysieren</li>
+                <li>Effizienz und Zuverlässigkeit verbessern</li>
+                <li>Zusammenhänge zwischen Nachfrage und operativer Umsetzung erkennen</li>
+                <li>Akademische Basis aus Master und Bachelorarbeit einbringen</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="dual-bridge">
+            Marketing schafft Nachfrage – Supply Chain stellt sicher, dass diese Nachfrage zuverlässig erfüllt werden kann.
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="de-contact">
       <div class="wrap">
         <div class="contact">
@@ -892,6 +1090,98 @@
       </div>
     </section>
 
+
+    <section id="en-programme">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Why this Graduate Programme</div>
+            <h2>Build breadth. Take ownership. Develop a well-founded long-term focus.</h2>
+          </div>
+          <p>
+            At the start of my career, I am deliberately looking for a programme that goes beyond one narrow function,
+            allows me to understand different commercial areas and gives me early responsibility for real tasks and projects.
+          </p>
+        </div>
+
+        <div class="motivation-wrap">
+          <div class="motivation-card dark">
+            <span class="label">Why Pohl-Boskamp</span>
+            <h3>A business where marketing, manufacturing and supply chain visibly connect.</h3>
+            <p>
+              I am attracted by the combination of an owner-managed mid-sized company,
+              in-house production, established brands and international commercialisation.
+              Commercial decisions therefore happen across functions rather than in isolation.
+            </p>
+            <ul>
+              <li>Own brands and tangible products rather than purely abstract services</li>
+              <li>Direct connection between market demand, production and availability</li>
+              <li>International business in a mid-sized environment</li>
+              <li>Products with a concrete benefit for patients</li>
+            </ul>
+          </div>
+
+          <div class="motivation-card">
+            <span class="label">Why the Graduate Programme</span>
+            <h3>The breadth I am looking for at the beginning of my career.</h3>
+            <p>
+              I particularly value the opportunity to gain exposure to logistics, procurement,
+              controlling, digital marketing and brand management while contributing to day-to-day work
+              and taking ownership of projects.
+            </p>
+            <ul>
+              <li>End-to-end understanding instead of one isolated function</li>
+              <li>Early responsibility and hands-on project work</li>
+              <li>Support process improvements from analysis through implementation</li>
+              <li>Develop a well-founded view of where I can create the most value long term</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dual-view">
+          <div class="dual-head">
+            <div>
+              <div class="kicker">Two Perspectives</div>
+              <h3>Marketing & Commercial as my main focus. Supply Chain as a deliberate second interest.</h3>
+            </div>
+            <p>
+              My practical experience is strongest in marketing.
+              At the same time, supply chain has been an important topic throughout my studies and bachelor thesis.
+              In a manufacturing pharma company, I find the connection between both perspectives particularly relevant.
+            </p>
+          </div>
+
+          <div class="dual-grid">
+            <div class="dual-card marketing">
+              <h4>Marketing & Commercial</h4>
+              <ul>
+                <li>Understand customers and markets</li>
+                <li>Develop brands and offerings</li>
+                <li>Identify market opportunities</li>
+                <li>Execute campaigns and CRM initiatives</li>
+                <li>Translate commercial insights into action</li>
+              </ul>
+            </div>
+
+            <div class="dual-card scm">
+              <h4>Supply Chain Management</h4>
+              <ul>
+                <li>Understand product availability and planning</li>
+                <li>Analyse processes and cross-functional interfaces</li>
+                <li>Improve efficiency and reliability</li>
+                <li>Understand the link between demand and operational execution</li>
+                <li>Bring in academic knowledge from my master and bachelor thesis</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="dual-bridge">
+            Marketing creates demand – supply chain ensures that this demand can be fulfilled reliably.
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="en-contact">
       <div class="wrap">
         <div class="contact">
@@ -919,6 +1209,7 @@
         ['Skills','#de-skills'],
         ['Erfahrung','#de-experience'],
         ['Case','#de-case'],
+        ['Traineeprogramm','#de-programme'],
         ['Motivation','#de-why']
       ],
       en: [
@@ -926,6 +1217,7 @@
         ['Skills','#en-skills'],
         ['Experience','#en-experience'],
         ['Case','#en-case'],
+        ['Graduate Programme','#en-programme'],
         ['Motivation','#en-why']
       ]
     };
