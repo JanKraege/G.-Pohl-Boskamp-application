@@ -5,517 +5,950 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Bewerbungswebsite von Jan Kraege für das kaufmännische Traineeprogramm bei Pohl-Boskamp." />
   <title>Jan Kraege | Bewerbung Pohl-Boskamp</title>
+
   <style>
     :root{
-      --ink:#1f2a33;
-      --ink-soft:#53616b;
-      --forest:#4f6c58;
-      --forest-soft:#e4ede5;
-      --berry:#8a4b53;
-      --berry-soft:#f3e5e7;
-      --sand:#f7f3ec;
-      --paper:#fffdf9;
-      --line:#dccfbe;
-      --card:#fcfaf6;
-      --shadow:0 18px 42px rgba(34,42,50,.08);
+      --bg:#f4f1eb;
+      --paper:#fffdfa;
+      --paper-2:#f9f6f1;
+      --ink:#202a31;
+      --muted:#68737c;
+      --line:#ddd3c7;
+      --forest:#496556;
+      --forest-2:#6f8778;
+      --forest-soft:#e7eee9;
+      --wine:#8e5158;
+      --wine-soft:#f3e8e9;
+      --cream:#efe6d7;
+      --shadow:0 20px 60px rgba(45,52,57,.09);
       --radius-xl:34px;
-      --max:1220px;
+      --radius-lg:26px;
+      --radius-md:18px;
+      --max:1240px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       color:var(--ink);
-      background:linear-gradient(180deg,#f5f1ea 0%,#fbf8f3 35%,#f6f2eb 100%);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(142,81,88,.06), transparent 24%),
+        radial-gradient(circle at 90% 10%, rgba(73,101,86,.08), transparent 26%),
+        var(--bg);
       line-height:1.6;
     }
+
     a{text-decoration:none;color:inherit}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+    .page{display:none}
+    html[data-language="de"] .page[data-lang="de"],
+    html[data-language="en"] .page[data-lang="en"]{display:block}
+
     nav{
-      position:sticky;top:0;z-index:100;
-      backdrop-filter:blur(12px);
-      background:rgba(247,243,236,.84);
-      border-bottom:1px solid rgba(220,207,190,.72);
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(14px);
+      background:rgba(244,241,235,.88);
+      border-bottom:1px solid rgba(221,211,199,.78);
     }
     .nav-inner{
-      max-width:var(--max);margin:0 auto;padding:14px 24px;
-      display:flex;justify-content:space-between;align-items:center;gap:18px;
+      max-width:var(--max);
+      margin:auto;
+      padding:14px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
     }
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:-.02em}
     .brand-mark{
-      width:40px;height:40px;border-radius:14px;display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--forest),#698472);color:#fff;font-size:13px;
-      box-shadow:0 10px 24px rgba(79,108,88,.25)
+      width:40px;height:40px;border-radius:13px;display:grid;place-items:center;
+      background:linear-gradient(145deg,var(--forest),#637c6c);color:#fff;font-size:13px;
+      box-shadow:0 8px 22px rgba(73,101,86,.22)
     }
     .nav-right{display:flex;align-items:center;gap:18px}
-    .nav-links{display:flex;gap:18px;font-size:14px;color:#5a6670}
+    .nav-links{display:flex;gap:18px;font-size:14px;color:#606b73}
     .nav-links a:hover{color:var(--forest)}
     .lang-switch{
-      display:flex;gap:4px;padding:4px;border:1px solid var(--line);
-      border-radius:999px;background:rgba(255,255,255,.82)
+      display:flex;gap:4px;padding:4px;border-radius:999px;background:#fff;
+      border:1px solid var(--line)
     }
     .lang-btn{
       border:0;background:transparent;cursor:pointer;padding:7px 10px;
-      border-radius:999px;font:inherit;font-size:12px;font-weight:800;color:#68737b
+      border-radius:999px;font:inherit;font-size:12px;font-weight:850;color:#69737a
     }
     .lang-btn.active{background:var(--forest);color:#fff}
-    .lang-page{display:none}
-    html[data-language="de"] .lang-page[data-lang="de"],
-    html[data-language="en"] .lang-page[data-lang="en"]{display:block}
 
     .hero{
-      max-width:var(--max);margin:0 auto;padding:82px 24px 60px;
-      display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center;
+      max-width:var(--max);
+      margin:auto;
+      padding:78px 28px 54px;
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:42px;
+      align-items:stretch;
+    }
+    .hero-copy{
+      background:rgba(255,253,250,.84);
+      border:1px solid rgba(221,211,199,.88);
+      border-radius:var(--radius-xl);
+      padding:46px;
+      box-shadow:var(--shadow);
+      min-height:520px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
     .eyebrow{
-      display:inline-flex;align-items:center;gap:8px;padding:8px 12px;
-      border-radius:999px;border:1px solid var(--line);
-      background:#fff7ef;color:var(--forest);font-size:13px;font-weight:800;margin-bottom:20px
+      display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+      padding:8px 12px;border-radius:999px;
+      background:var(--wine-soft);color:var(--wine);
+      font-size:13px;font-weight:850;margin-bottom:22px
     }
-    .eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--berry)}
+    .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--wine)}
     h1{
-      margin:0;font-size:clamp(46px,7vw,76px);line-height:1.02;
-      letter-spacing:-.045em;color:var(--ink)
+      margin:0;
+      font-size:clamp(48px,6.8vw,78px);
+      line-height:1.01;
+      letter-spacing:-.05em;
+      max-width:780px;
     }
     h1 span{color:var(--forest)}
-    .hero p{margin:22px 0 30px;font-size:19px;max-width:700px;color:var(--ink-soft)}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-copy p{
+      margin:24px 0 30px;
+      font-size:19px;
+      color:var(--muted);
+      max-width:760px;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;
-      border-radius:14px;border:1px solid var(--line);font-weight:800;background:#fff
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:13px 18px;border-radius:14px;border:1px solid var(--line);
+      font-weight:850;background:#fff;transition:.2s ease
     }
-    .btn-primary{background:var(--forest);border-color:var(--forest);color:#fff}
-    .hero-card{
-      background:linear-gradient(145deg,#fff8f1,#f5ede0);
-      border:1px solid var(--line);border-radius:var(--radius-xl);padding:30px;
-      box-shadow:var(--shadow);min-height:430px;display:flex;flex-direction:column;justify-content:space-between
-    }
-    .hero-mini{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--berry)}
-    .hero-card h2{margin:10px 0 0;font-size:34px;line-height:1.14;letter-spacing:-.03em}
-    .metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
-    .metric{padding:16px;border-radius:18px;background:#fffdf9;border:1px solid rgba(220,207,190,.8)}
-    .metric strong{display:block;font-size:18px;color:var(--forest)}
-    .metric span{display:block;font-size:13px;color:var(--ink-soft);margin-top:2px}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--forest);color:#fff;border-color:var(--forest)}
 
-    section{padding:68px 0}
+    .hero-side{
+      display:grid;
+      grid-template-rows:1.15fr .85fr;
+      gap:18px;
+    }
+    .focus-card{
+      border-radius:var(--radius-xl);
+      padding:34px;
+      background:linear-gradient(145deg,#4c6758,#6e8274);
+      color:#fff;
+      box-shadow:var(--shadow);
+      display:flex;flex-direction:column;justify-content:space-between
+    }
+    .focus-card .small{
+      font-size:12px;text-transform:uppercase;letter-spacing:.12em;
+      opacity:.75;font-weight:850
+    }
+    .focus-card h2{
+      margin:10px 0 0;
+      font-size:34px;
+      line-height:1.14;
+      letter-spacing:-.035em;
+    }
+    .focus-bottom{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+    .pill{
+      padding:9px 11px;border-radius:999px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.18);
+      font-size:12px;font-weight:750
+    }
+
+    .facts-card{
+      border-radius:var(--radius-lg);
+      padding:26px;
+      background:#fffdfa;
+      border:1px solid var(--line);
+      box-shadow:0 12px 34px rgba(45,52,57,.06);
+      display:grid;grid-template-columns:1fr 1fr;gap:14px
+    }
+    .fact{
+      padding:15px;border-radius:16px;background:var(--paper-2);
+      border:1px solid rgba(221,211,199,.72)
+    }
+    .fact strong{display:block;color:var(--forest);font-size:18px}
+    .fact span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+
+    section{padding:66px 0}
     .section-head{
-      display:grid;grid-template-columns:.8fr 1.2fr;gap:38px;align-items:end;margin-bottom:30px
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:42px;
+      align-items:end;
+      margin-bottom:32px;
     }
-    .kicker{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--berry)}
-    h2{margin:6px 0 0;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.035em}
-    .section-head p{margin:0;color:var(--ink-soft);font-size:17px}
+    .kicker{
+      font-size:12px;font-weight:900;letter-spacing:.12em;
+      text-transform:uppercase;color:var(--wine)
+    }
+    .section-head h2{
+      margin:7px 0 0;
+      font-size:clamp(31px,4vw,48px);
+      line-height:1.06;
+      letter-spacing:-.04em;
+    }
+    .section-head p{margin:0;color:var(--muted);font-size:17px}
 
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .card,.why-card{
-      background:var(--paper);border:1px solid var(--line);border-radius:24px;
-      padding:24px;box-shadow:0 10px 28px rgba(31,42,51,.04)
+    /* Timeline */
+    .journey{
+      position:relative;
+      background:rgba(255,253,250,.78);
+      border:1px solid var(--line);
+      border-radius:32px;
+      padding:34px 28px 30px;
+      box-shadow:0 12px 36px rgba(45,52,57,.05);
     }
-    .icon{
-      width:48px;height:48px;border-radius:14px;display:grid;place-items:center;
-      background:var(--forest-soft);color:var(--forest);font-weight:800;margin-bottom:16px
+    .journey-line{
+      position:absolute;
+      left:7%;
+      right:7%;
+      top:91px;
+      height:4px;
+      background:linear-gradient(90deg,var(--wine),var(--forest));
+      opacity:.28;
+      border-radius:99px;
     }
-    .card h3,.why-card h3{margin:0 0 8px;font-size:19px}
-    .card p,.why-card p{margin:0;color:var(--ink-soft)}
+    .journey-grid{
+      position:relative;
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      gap:14px;
+      z-index:1;
+    }
+    .journey-item{text-align:center;padding:0 6px}
+    .journey-icon{
+      width:96px;height:96px;border-radius:50%;margin:0 auto 16px;
+      background:#fff;
+      border:8px solid var(--forest);
+      display:grid;place-items:center;font-size:36px;
+      box-shadow:0 8px 20px rgba(45,52,57,.07)
+    }
+    .journey-item:nth-child(odd) .journey-icon{border-color:var(--wine)}
+    .journey-item h3{
+      margin:0;
+      font-size:18px;
+      line-height:1.15;
+      letter-spacing:-.02em
+    }
+    .journey-item p{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45
+    }
 
-    .showcase-shell{
-      background:rgba(255,255,255,.56);border:1px solid rgba(220,207,190,.75);
-      border-radius:38px;padding:30px;box-shadow:0 10px 26px rgba(31,42,51,.05)
+    /* Skills */
+    .skills-layout{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:22px;
     }
-    .strength-grid{
-      display:grid;grid-template-columns:repeat(4,minmax(210px,1fr));gap:24px;align-items:stretch
+    .skills-main,.skills-side{
+      background:#fffdfa;
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:30px;
+      box-shadow:0 12px 34px rgba(45,52,57,.05)
     }
-    .strength-card{
-      background:var(--card);border:1px solid rgba(220,207,190,.95);border-radius:28px;
-      padding:26px 22px 30px;text-align:center;min-height:340px;
-      display:flex;flex-direction:column;align-items:center;justify-content:flex-start
+    .skills-main h3,.skills-side h3{
+      margin:0 0 20px;
+      font-size:25px;
+      letter-spacing:-.025em
     }
-    .strength-icon{
-      width:112px;height:112px;border-radius:50%;display:grid;place-items:center;
-      font-size:46px;margin-bottom:20px;flex-shrink:0
+    .skill-row{
+      display:grid;
+      grid-template-columns:170px 1fr;
+      gap:20px;
+      padding:17px 0;
+      border-bottom:1px solid rgba(221,211,199,.72)
     }
-    .strength-card:nth-child(odd) .strength-icon{background:var(--berry-soft)}
-    .strength-card:nth-child(even) .strength-icon{background:var(--forest-soft)}
-    .strength-card h3{
-      margin:0 0 12px;
-      font-size:20px;
-      line-height:1.18;
-      min-height:48px;
+    .skill-row:last-child{border-bottom:0}
+    .skill-row strong{color:var(--forest)}
+    .skill-row span{color:var(--muted);font-size:14px}
+    .tool-chips{display:flex;flex-wrap:wrap;gap:10px}
+    .tool-chip{
+      padding:10px 12px;border-radius:14px;
+      background:var(--forest-soft);color:var(--forest);
+      font-size:13px;font-weight:800
+    }
+    .soft-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px
+    }
+    .soft-card{
+      padding:16px;border-radius:18px;
+      background:var(--paper-2);
+      border:1px solid rgba(221,211,199,.72)
+    }
+    .soft-card strong{display:block;margin-bottom:5px}
+    .soft-card span{color:var(--muted);font-size:13px}
+
+    /* Experience */
+    .experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .experience-card{
+      border-radius:30px;padding:30px;
+      border:1px solid var(--line);
+      box-shadow:0 12px 34px rgba(45,52,57,.05)
+    }
+    .experience-card.green{
+      background:linear-gradient(145deg,#50695b,#6c8273);
+      color:#fff;
+      border:0
+    }
+    .experience-card.light{background:#fffdfa}
+    .experience-top{
+      display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:16px
+    }
+    .experience-card h3{margin:0;font-size:26px;letter-spacing:-.03em}
+    .experience-card .role{margin-top:4px;font-size:14px;opacity:.78}
+    .year-tag{
+      padding:7px 10px;border-radius:999px;font-size:12px;font-weight:850;
+      background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18)
+    }
+    .light .year-tag{background:var(--wine-soft);border-color:transparent;color:var(--wine)}
+    .experience-card ul{margin:18px 0 0;padding-left:18px}
+    .experience-card li{margin:9px 0}
+    .experience-note{
+      margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);
+      font-size:14px;opacity:.82
+    }
+    .light .experience-note{border-top-color:var(--line);color:var(--muted)}
+
+    /* Case */
+    .case{
+      background:linear-gradient(145deg,#fff9f2,#f5ede4);
+      border:1px solid var(--line);
+      border-radius:32px;
+      padding:34px;
+      box-shadow:0 12px 34px rgba(45,52,57,.05)
+    }
+    .case-flow{
+      margin-top:28px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .case-step{
+      position:relative;
+      padding:22px;
+      background:#fff;
+      border:1px solid rgba(221,211,199,.86);
+      border-radius:20px;
+      min-height:180px
+    }
+    .case-step .num{font-size:12px;font-weight:900;color:var(--wine);margin-bottom:8px}
+    .case-step h4{margin:0 0 8px;font-size:18px}
+    .case-step p{margin:0;color:var(--muted);font-size:14px}
+    .case-result{
+      margin-top:16px;
+      padding:18px 20px;
+      background:var(--forest);
+      color:#fff;
+      border-radius:18px;
+      display:flex;justify-content:space-between;gap:20px;align-items:center
+    }
+    .case-result strong{font-size:16px}
+    .case-result span{font-size:14px;opacity:.85}
+
+    /* Why */
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .why-card{
+      background:#fffdfa;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:0 10px 28px rgba(45,52,57,.04)
+    }
+    .why-card .num{font-size:12px;font-weight:900;color:var(--wine);margin-bottom:12px}
+    .why-card h3{margin:0 0 8px;font-size:20px}
+    .why-card p{margin:0;color:var(--muted)}
+    .why-highlight{
+      margin-top:18px;
+      border-radius:24px;
+      padding:24px 28px;
+      background:linear-gradient(135deg,var(--wine),#6f4b4f);
+      color:#fff;
+      display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:center
+    }
+    .why-highlight strong{font-size:22px;line-height:1.2}
+    .why-highlight p{margin:0;opacity:.84}
+
+    .contact{
+      background:linear-gradient(145deg,#465f51,#6d8174);
+      color:#fff;
+      border-radius:34px;
+      padding:38px 40px;
       display:flex;
       align-items:center;
-      justify-content:center;
-      text-align:center
-    }
-    .strength-card p{
-      margin:0;
-      color:#68737b;
-      font-size:15px;
-      line-height:1.65;
-      max-width:240px
-    }
-
-    .timeline-shell{overflow-x:auto}
-    .timeline{
-      position:relative;display:grid;grid-template-columns:repeat(7,minmax(135px,1fr));
-      gap:18px;min-width:980px;padding:12px 10px 8px
-    }
-    .timeline:before{
-      content:"";position:absolute;left:40px;right:40px;top:72px;height:8px;
-      background:repeating-linear-gradient(90deg,var(--berry) 0 22px,transparent 22px 34px);
-      border-radius:999px
-    }
-    .timeline-item{position:relative;z-index:1;text-align:center;padding:0 4px}
-    .timeline-badge{
-      width:124px;height:124px;border-radius:50%;margin:0 auto 18px;background:#fff;
-      border:10px solid var(--forest);display:grid;place-items:center;font-size:42px;
-      box-shadow:0 8px 20px rgba(31,42,51,.06)
-    }
-    .timeline-item.alt .timeline-badge{border-color:var(--berry)}
-    .timeline-item h3{margin:0;font-size:19px;line-height:1.15}
-    .timeline-item .sub{margin-top:4px;font-size:14px;color:#6e7881;font-weight:600}
-    .timeline-item .date{margin-top:2px;font-size:14px;color:#7c878f}
-
-    .skills-split,.split{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
-    .skill-panel,.panel{
-      border-radius:30px;padding:30px;background:#fff;border:1px solid var(--line)
-    }
-    .skill-panel.alt{background:linear-gradient(145deg,#f5ede0,#f7f2ea)}
-    .skill-panel h3,.panel h3{margin:0 0 18px;font-size:26px}
-    .skill{padding:14px 0;border-bottom:1px solid rgba(220,207,190,.7)}
-    .skill:last-child{border-bottom:0}
-    .skill b{display:block;color:var(--forest);margin-bottom:4px}
-    .skill span{color:var(--ink-soft);font-size:14px}
-    .panel-dark{background:linear-gradient(145deg,#536d5a,#6b8471);color:#fff;border:0}
-    .panel ul{margin:0;padding-left:18px}
-    .panel li{margin:9px 0}
-
-    .case{
-      background:linear-gradient(145deg,#fff7ef,#f6ede4);
-      border:1px solid var(--line);border-radius:34px;padding:34px;
-      box-shadow:0 10px 26px rgba(31,42,51,.04)
-    }
-    .case-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
-    .case-step{background:#fff;border:1px solid rgba(220,207,190,.85);border-radius:20px;padding:19px}
-    .case-step .nr{font-size:12px;color:var(--berry);font-weight:800;margin-bottom:8px}
-    .case-step h4{margin:0 0 7px}
-    .case-step p{margin:0;color:var(--ink-soft);font-size:14px}
-
-    .quote{
-      margin:0;border-radius:34px;padding:40px;
-      background:linear-gradient(145deg,#586f60,#7f6053);color:#fff;
-      font-size:clamp(24px,3.4vw,38px);line-height:1.28;letter-spacing:-.025em;
+      justify-content:space-between;
+      gap:24px;
       box-shadow:var(--shadow)
     }
-    .quote small{display:block;margin-top:18px;font-size:14px;opacity:.82}
-    .why-card span{display:block;color:var(--berry);font-size:12px;font-weight:800;margin-bottom:9px}
-    .contact{
-      background:linear-gradient(145deg,#4f6c58,#6b8471);color:#fff;border-radius:36px;padding:42px;
-      display:flex;justify-content:space-between;align-items:center;gap:28px;box-shadow:var(--shadow)
-    }
-    .contact h2{color:#fff;margin:0 0 10px}
-    .contact p{margin:0;color:rgba(255,255,255,.82)}
+    .contact h2{margin:0 0 8px;font-size:34px;letter-spacing:-.035em}
+    .contact p{margin:0;opacity:.82}
     .contact-links{display:flex;gap:10px;flex-wrap:wrap}
-    .contact-links a{padding:11px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08)}
-    footer{max-width:var(--max);margin:0 auto;padding:28px 24px 42px;color:#7a858d;font-size:13px;display:flex;justify-content:space-between;gap:20px}
+    .contact-links a{
+      padding:11px 14px;border-radius:12px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.2)
+    }
 
-    @media(max-width:1100px){
-      .hero,.section-head,.skills-split,.split{grid-template-columns:1fr}
-      .grid-3,.grid-4,.case-grid{grid-template-columns:1fr 1fr}
-      .strength-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    footer{
+      max-width:var(--max);
+      margin:auto;
+      padding:28px 28px 44px;
+      color:#788188;
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      gap:20px
+    }
+
+    @media(max-width:1080px){
+      .hero,.section-head,.skills-layout,.experience-grid{grid-template-columns:1fr}
+      .journey-grid{grid-template-columns:repeat(4,1fr)}
+      .journey-line{display:none}
+      .case-flow,.why-grid{grid-template-columns:1fr 1fr}
+      .why-highlight{grid-template-columns:1fr}
       .nav-links{display:none}
     }
-    @media(max-width:800px){
-      .strength-grid{grid-template-columns:1fr}
-      .grid-3,.grid-4,.case-grid{grid-template-columns:1fr}
-      .metric-grid{grid-template-columns:1fr}
+    @media(max-width:760px){
+      .journey-grid{grid-template-columns:repeat(2,1fr)}
+      .case-flow,.why-grid,.facts-card{grid-template-columns:1fr}
+      .skill-row{grid-template-columns:1fr;gap:6px}
+      .soft-grid{grid-template-columns:1fr}
       .contact{flex-direction:column;align-items:flex-start}
     }
-    @media(max-width:620px){
-      section{padding:54px 0}
-      .hero{padding:58px 20px 42px}
-      .wrap{padding:0 20px}
+    @media(max-width:560px){
+      .hero{padding:56px 18px 38px}
+      .hero-copy{padding:30px 24px;min-height:auto}
+      .wrap{padding:0 18px}
+      .journey-grid{grid-template-columns:1fr}
       h1{font-size:44px}
-      .showcase-shell{padding:20px}
-      .strength-card{min-height:auto}
+      section{padding:54px 0}
     }
   </style>
 </head>
+
 <body>
   <nav>
     <div class="nav-inner">
-      <a href="#top" class="brand"><span class="brand-mark">JK</span><span>Jan Kraege</span></a>
+      <a class="brand" href="#"><span class="brand-mark">JK</span><span>Jan Kraege</span></a>
       <div class="nav-right">
-        <div class="nav-links">
-          <a href="#profil">Profil / Profile</a>
-          <a href="#weg">Werdegang / Journey</a>
-          <a href="#staerken">Stärken / Strengths</a>
-          <a href="#skills">Skills</a>
-          <a href="#erfahrung">Erfahrung / Experience</a>
-          <a href="#motivation">Motivation</a>
-        </div>
-        <div class="lang-switch" aria-label="Sprache auswählen">
-          <button class="lang-btn active" data-set-lang="de" type="button">DE</button>
-          <button class="lang-btn" data-set-lang="en" type="button">EN</button>
+        <div class="nav-links" id="navLinks"></div>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-set-lang="de">DE</button>
+          <button class="lang-btn" data-set-lang="en">EN</button>
         </div>
       </div>
     </div>
   </nav>
 
-  <div class="lang-page" data-lang="de">
-    <main id="top">
-      <header class="hero">
-        <div>
-          <div class="eyebrow"><span class="eyebrow-dot"></span>Bewerbung · Kaufmännisches Traineeprogramm</div>
-          <h1>Marketing verstehen.<br><span>Geschäft weiterdenken.</span></h1>
-          <p>Ich verbinde praktische Erfahrung in Marketing, Marktanalyse und CRM mit strategischem Denken, internationaler Erfahrung und einem zusätzlichen Verständnis für Supply-Chain-Themen. Genau diese Kombination möchte ich bei Pohl-Boskamp in einem breiten kaufmännischen Traineeprogramm weiterentwickeln.</p>
-          <div class="actions"><a class="btn btn-primary" href="#profil">Mein Profil</a><a class="btn" href="#weg">Werdegang ansehen</a></div>
+  <!-- DEUTSCH -->
+  <div class="page" data-lang="de">
+    <header class="hero" id="de-top">
+      <div class="hero-copy">
+        <div class="eyebrow">Bewerbung · Kaufmännisches Traineeprogramm</div>
+        <h1>Marketing verstehen.<br><span>Unternehmen ganzheitlich denken.</span></h1>
+        <p>
+          Ich verbinde praktische Erfahrung in Marketing, Marktanalyse und CRM mit strategischem Denken,
+          internationaler Erfahrung und einem zusätzlichen Verständnis für Supply-Chain-Themen.
+          Mein bevorzugter Schwerpunkt ist Marketing & Vertrieb – mit Interesse an den Schnittstellen zu Logistik,
+          Einkauf, Controlling und weiteren kaufmännischen Bereichen.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#de-journey">Mein Werdegang</a>
+          <a class="btn" href="#de-skills">Meine Skills</a>
         </div>
-        <aside class="hero-card">
-          <div><div class="hero-mini">Mein Fokus</div><h2>Marketing & Vertrieb als Schwerpunkt.<br>Analyse, Strategie und Supply Chain als Ergänzung.</h2></div>
-          <div class="metric-grid">
-            <div class="metric"><strong>Master</strong><span>Master of Management · UTS</span></div>
-            <div class="metric"><strong>International</strong><span>Studium & Berufserfahrung in Australien</span></div>
-            <div class="metric"><strong>Marketing</strong><span>CRM, Kampagnen, Markt- & Wettbewerbsanalyse</span></div>
-            <div class="metric"><strong>Strategie</strong><span>Business Cases & Management-Empfehlungen</span></div>
+      </div>
+
+      <div class="hero-side">
+        <div class="focus-card">
+          <div>
+            <div class="small">Mein Fokus</div>
+            <h2>Marketing & Vertrieb als Kern.<br>Strategie und Supply Chain als zusätzliche Perspektive.</h2>
           </div>
-        </aside>
-      </header>
-
-      <section id="profil"><div class="wrap">
-        <div class="section-head"><div><div class="kicker">Mein Profil</div><h2>Analytisch, kommunikativ und hands-on.</h2></div><p>Mein Profil ist bewusst breit: Ich bringe praktische Marketing-Erfahrung mit, arbeite gern strukturiert mit Daten und Marktinformationen und habe Freude daran, Ideen in konkrete Empfehlungen und Maßnahmen zu übersetzen. Durch Studium und Auslandserfahrung bin ich es gewohnt, mich schnell in neue Themen und Arbeitsumfelder einzuarbeiten.</p></div>
-        <div class="grid-3">
-          <div class="card"><div class="icon">01</div><h3>Analytisch</h3><p>Ich strukturiere komplexe Fragestellungen, vergleiche Optionen und leite aus Daten und Marktinformationen klare Empfehlungen ab.</p></div>
-          <div class="card"><div class="icon">02</div><h3>Kommunikativ</h3><p>Ich arbeite gern mit unterschiedlichen Teams und Stakeholdern und kann Ergebnisse verständlich und adressatengerecht aufbereiten.</p></div>
-          <div class="card"><div class="icon">03</div><h3>Eigenständig</h3><p>Ich übernehme Verantwortung, arbeite mich schnell in neue Themen ein und halte Projekte auch bei wechselnden Prioritäten auf Kurs.</p></div>
-        </div>
-      </div></section>
-
-      <section id="staerken"><div class="wrap">
-        <div class="section-head"><div><div class="kicker">Persönliche Stärken</div><h2>Was mich in der Zusammenarbeit auszeichnet.</h2></div><p>Neben meiner fachlichen Erfahrung bringe ich Eigenschaften mit, die mir helfen, mich schnell in neue Aufgaben einzuarbeiten, unterschiedliche Perspektiven zusammenzubringen und Themen zuverlässig umzusetzen.</p></div>
-        <div class="showcase-shell"><div class="strength-grid">
-          <div class="strength-card"><div class="strength-icon">💡</div><h3>Kreativität</h3><p>Neue Ideen entwickeln und bekannte Prozesse aus einer anderen Perspektive betrachten.</p></div>
-          <div class="strength-card"><div class="strength-icon">🌍</div><h3>Interkulturelle Kommunikation</h3><p>Sicher in internationalen Teams und mit unterschiedlichen Kommunikationsstilen arbeiten.</p></div>
-          <div class="strength-card"><div class="strength-icon">🤝</div><h3>Teamwork</h3><p>Unterschiedliche Perspektiven aufnehmen und auf gemeinsame Ziele ausrichten.</p></div>
-          <div class="strength-card"><div class="strength-icon">📚</div><h3>Lernbereitschaft</h3><p>Neue Tools, Technologien und komplexe Themen schnell und eigenständig erschließen.</p></div>
-          <div class="strength-card"><div class="strength-icon">🧭</div><h3>Struktur</h3><p>Unklare Anforderungen in klare Arbeitspakete und fundierte Entscheidungen übersetzen.</p></div>
-          <div class="strength-card"><div class="strength-icon">⚡</div><h3>Umsetzungsstärke</h3><p>Ideen pragmatisch testen, priorisieren und zuverlässig ins Ziel bringen.</p></div>
-          <div class="strength-card"><div class="strength-icon">🎤</div><h3>Kommunikation</h3><p>Komplexe Zusammenhänge zielgruppengerecht erklären und souverän vertreten.</p></div>
-        </div></div>
-      </div></section>
-
-      <section id="weg"><div class="wrap">
-        <div class="section-head"><div><div class="kicker">Mein Werdegang</div><h2>Ein internationaler Weg mit Marketing-, Strategie- und Supply-Chain-Bezug.</h2></div><p>Mein Werdegang verbindet betriebswirtschaftliche Ausbildung, internationale Erfahrung und praktische Marketingarbeit. Die Stationen zeigen, wie sich mein Profil Schritt für Schritt erweitert hat.</p></div>
-        <div class="timeline-shell"><div class="timeline">
-          <div class="timeline-item alt"><div class="timeline-badge">🇩🇪</div><h3>Bachelor</h3><div class="sub">Business Administration</div><div class="date">2020–2024</div></div>
-          <div class="timeline-item"><div class="timeline-badge">✈️</div><h3>UTS Exchange</h3><div class="sub">Sydney</div><div class="date">2022</div></div>
-          <div class="timeline-item alt"><div class="timeline-badge">💧</div><h3>BRITA</h3><div class="sub">Sales & Marketing</div><div class="date">2022–2023</div></div>
-          <div class="timeline-item"><div class="timeline-badge">📘</div><h3>Thesis</h3><div class="sub">Australische Supply Chains</div><div class="date">2024</div></div>
-          <div class="timeline-item alt"><div class="timeline-badge">🎓</div><h3>Master</h3><div class="sub">UTS Management · Strategy &amp; SCM</div><div class="date">2025–2026</div></div>
-          <div class="timeline-item"><div class="timeline-badge">⚡</div><h3>Tokyo Headspa</h3><div class="sub">Digital Marketing</div><div class="date">2026</div></div>
-          <div class="timeline-item alt"><div class="timeline-badge">🏥</div><h3>Nächster Schritt</h3><div class="sub">Pohl-Boskamp</div><div class="date">Traineeprogramm</div></div>
-        </div></div>
-      </div></section>
-
-      <section id="skills"><div class="wrap">
-        <div class="section-head"><div><div class="kicker">Fachliche Skills</div><h2>Kompetenzen, die ich direkt einbringen kann.</h2></div><p>Für mich ist entscheidend, nicht nur Tools aufzuzählen, sondern zu zeigen, wie ich sie im Arbeitsalltag einsetze.</p></div>
-        <div class="skills-split">
-          <div class="skill-panel"><h3>Business & Marketing Skills</h3>
-            <div class="skill"><b>Markt- & Wettbewerbsanalyse</b><span>Strukturierte Bewertung von Marktpotenzial, Wettbewerbsumfeld, Kundenbedürfnissen und Wachstumsmöglichkeiten.</span></div>
-            <div class="skill"><b>CRM & Kampagnen</b><span>Erfahrung mit Mailchimp und Salesforce Marketing Cloud sowie Planung, Umsetzung und Auswertung digitaler Kampagnen.</span></div>
-            <div class="skill"><b>Strategische Entscheidungsunterstützung</b><span>Aufbereitung komplexer Erkenntnisse in klaren Empfehlungen und managementgerechten Präsentationen.</span></div>
-            <div class="skill"><b>Cross-funktionale Zusammenarbeit</b><span>Zusammenarbeit mit Marketing, Sales und E-Commerce sowie Kommunikation über unterschiedliche Stakeholder hinweg.</span></div>
-            <div class="skill"><b>Supply-Chain-Verständnis</b><span>Akademische Kenntnisse aus Strategic Supply Chain Management sowie Bachelorarbeit zu Supply-Chain-Herausforderungen im australischen Markt.</span></div>
-          </div>
-          <div class="skill-panel alt"><h3>Tools & Arbeitsweise</h3>
-            <div class="skill"><b>Excel</b><span>Analyse betriebswirtschaftlicher Fragestellungen, inklusive Solver.</span></div>
-            <div class="skill"><b>PowerPoint</b><span>Strukturierte, managementgerechte Aufbereitung von Ergebnissen und Empfehlungen.</span></div>
-            <div class="skill"><b>Mailchimp</b><span>EDM-Kampagnen und Performance-Auswertung.</span></div>
-            <div class="skill"><b>Salesforce Marketing Cloud</b><span>Unterstützung digitaler CRM- und Marketingaktivitäten.</span></div>
-            <div class="skill"><b>Canva & AI Tools</b><span>Content-Erstellung, Recherche und effizientere Marketing-Workflows.</span></div>
-            <div class="skill"><b>Deutsch & Englisch</b><span>Deutsch Muttersprache, Englisch C1 und internationale Arbeitserfahrung.</span></div>
+          <div class="focus-bottom">
+            <span class="pill">Marketing</span>
+            <span class="pill">CRM</span>
+            <span class="pill">Market Analysis</span>
+            <span class="pill">Strategy</span>
+            <span class="pill">Supply Chain</span>
           </div>
         </div>
-      </div></section>
 
-      <section id="erfahrung"><div class="wrap">
-        <div class="section-head"><div><div class="kicker">Praxis</div><h2>Operatives Marketing und strategische Analyse.</h2></div><p>Meine beiden Stationen in Australien ergänzen sich gut: Tokyo Headspa steht stärker für Umsetzung und digitales Marketing, BRITA stärker für Analyse und kommerzielle Entscheidungsunterstützung.</p></div>
-        <div class="split">
-          <div class="panel panel-dark"><h3>Tokyo Headspa · Marketing</h3><ul>
-            <li>Wettbewerbs- und Marktanalysen</li><li>Empfehlungen zur Erweiterung des Marken- und Serviceportfolios</li><li>Social-Media- und EDM-Kampagnenmanagement</li><li>Performance-Analyse mit Mailchimp und Salesforce Marketing Cloud</li><li>Influencer Research und Vorauswahl potenzieller Kooperationspartner</li><li>KI-gestützte Content-Ideenentwicklung und effizientere Arbeitsprozesse</li>
-          </ul></div>
-          <div class="panel"><h3>BRITA Australia · Sales & Marketing</h3><ul>
-            <li>Analyse eines potenziellen Subscription-Modells</li><li>Markt-, Kunden- und Wettbewerbsanalyse</li><li>Analyse von Markt-, Konsumenten- und Brand-Tracking-Daten</li><li>Aufbereitung zentraler Erkenntnisse für Managemententscheidungen</li><li>Cross-funktionale Zusammenarbeit mit Marketing, Sales und E-Commerce</li><li>Einblick in ein international arbeitendes Konsumgüterunternehmen</li>
-          </ul></div>
+        <div class="facts-card">
+          <div class="fact"><strong>Master</strong><span>Master of Management · UTS</span></div>
+          <div class="fact"><strong>International</strong><span>Studium & Praxis in Australien</span></div>
+          <div class="fact"><strong>Marketing</strong><span>Tokyo Headspa & BRITA</span></div>
+          <div class="fact"><strong>Sprachen</strong><span>Deutsch · Englisch C1</span></div>
         </div>
-      </div></section>
+      </div>
+    </header>
 
-      <section id="case"><div class="wrap"><div class="case">
-        <div class="section-head" style="margin-bottom:0"><div><div class="kicker">Beispielprojekt</div><h2>BRITA Subscription Case</h2></div><p>Ein Projekt, das meine Arbeitsweise gut zeigt: offene Fragestellung strukturieren, relevante Informationen analysieren und daraus eine klare Empfehlung ableiten.</p></div>
-        <div class="case-grid">
-          <div class="case-step"><div class="nr">01 · FRAGE</div><h4>Potenzial verstehen</h4><p>Bewertung der Attraktivität eines möglichen Subscription-Modells im australischen Markt.</p></div>
-          <div class="case-step"><div class="nr">02 · ANALYSE</div><h4>Markt strukturieren</h4><p>Untersuchung von Marktpotenzial, Kundensegmenten, Kaufverhalten und Wettbewerb.</p></div>
-          <div class="case-step"><div class="nr">03 · BEWERTUNG</div><h4>Commercial Logic</h4><p>Einordnung des kommerziellen Potenzials und möglicher Adoptionshürden.</p></div>
-          <div class="case-step"><div class="nr">04 · EMPFEHLUNG</div><h4>Entscheidung unterstützen</h4><p>Verdichtung der Ergebnisse und Ableitung einer fundierten strategischen Empfehlung.</p></div>
+    <section id="de-journey">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Mein Werdegang</div>
+            <h2>Ein klarer Weg von Marketing zu breiterem Business-Verständnis.</h2>
+          </div>
+          <p>
+            Mein Profil hat sich Schritt für Schritt erweitert: vom BWL-Studium mit Marketing-Fokus über internationale
+            Praxiserfahrung bis zum Master mit Strategie- und Supply-Chain-Inhalten.
+          </p>
         </div>
-      </div></div></section>
 
-      <section id="motivation"><div class="wrap"><blockquote class="quote">„Ich möchte dort einsteigen, wo Analyse nicht im Konzept endet, sondern in konkrete Entscheidungen, bessere Prozesse und sichtbare Ergebnisse übergeht.“<small>Meine Motivation für das kaufmännische Traineeprogramm bei Pohl-Boskamp</small></blockquote></div></section>
-
-      <section><div class="wrap">
-        <div class="section-head"><div><div class="kicker">Warum Pohl-Boskamp</div><h2>Ein Umfeld, das zu meinem Berufseinstieg passt.</h2></div><p>Besonders attraktiv finde ich die Verbindung aus inhabergeführtem Mittelstand, bekannten Marken, eigener Produktion und internationaler Ausrichtung. Das Traineeprogramm bietet dabei genau die Breite, die ich für meinen Einstieg suche.</p></div>
-        <div class="grid-4">
-          <div class="why-card"><span>01</span><h3>Frühe Verantwortung</h3><p>Eigene Projekte übernehmen und von Beginn an aktiv mitarbeiten.</p></div>
-          <div class="why-card"><span>02</span><h3>Breite Entwicklung</h3><p>Marketing & Vertrieb vertiefen und gleichzeitig angrenzende Bereiche kennenlernen.</p></div>
-          <div class="why-card"><span>03</span><h3>Produzierendes Unternehmen</h3><p>Kommerzielle Entscheidungen im Zusammenhang mit echten Produkten, Prozessen und Lieferketten verstehen.</p></div>
-          <div class="why-card"><span>04</span><h3>Pharma mit Bedeutung</h3><p>Für Marken und Produkte arbeiten, deren Qualität und Verfügbarkeit für Menschen unmittelbar relevant sind.</p></div>
+        <div class="journey">
+          <div class="journey-line"></div>
+          <div class="journey-grid">
+            <div class="journey-item">
+              <div class="journey-icon">🇩🇪</div>
+              <h3>Bachelor</h3>
+              <p>Business Administration<br>2020–2024</p>
+            </div>
+            <div class="journey-item">
+              <div class="journey-icon">✈️</div>
+              <h3>UTS Exchange</h3>
+              <p>Sydney · Marketing-Fokus<br>2022</p>
+            </div>
+            <div class="journey-item">
+              <div class="journey-icon">💧</div>
+              <h3>BRITA</h3>
+              <p>Sales & Marketing<br>2022–2023</p>
+            </div>
+            <div class="journey-item">
+              <div class="journey-icon">📘</div>
+              <h3>Bachelorarbeit</h3>
+              <p>Supply Chains Australien<br>2024</p>
+            </div>
+            <div class="journey-item">
+              <div class="journey-icon">🎓</div>
+              <h3>Master</h3>
+              <p>UTS · Strategy & SCM<br>2025–2026</p>
+            </div>
+            <div class="journey-item">
+              <div class="journey-icon">⚡</div>
+              <h3>Tokyo Headspa</h3>
+              <p>Digital Marketing<br>2026</p>
+            </div>
+            <div class="journey-item">
+              <div class="journey-icon">🏥</div>
+              <h3>Nächster Schritt</h3>
+              <p>Pohl-Boskamp<br>Traineeprogramm</p>
+            </div>
+          </div>
         </div>
-      </div></section>
+      </div>
+    </section>
 
-      <section id="contact"><div class="wrap"><div class="contact">
-        <div><h2>Vielen Dank für Ihre Zeit.</h2><p>Ich freue mich darauf, Pohl-Boskamp und das Traineeprogramm persönlich kennenzulernen.</p></div>
-        <div class="contact-links"><a href="mailto:jan.kraege@icloud.com">E-Mail</a><a href="tel:+4915226436229">Telefon</a><a href="https://www.linkedin.com/in/jan-kraege" target="_blank" rel="noopener">LinkedIn</a></div>
-      </div></div></section>
-    </main>
+    <section id="de-skills">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Was ich mitbringe</div>
+            <h2>Fachliche Skills und persönliche Arbeitsweise.</h2>
+          </div>
+          <p>
+            Statt viele einzelne Karten zu zeigen, sind meine Stärken hier bewusst gebündelt:
+            links die fachlichen Kompetenzen, rechts Tools und persönliche Arbeitsweise.
+          </p>
+        </div>
+
+        <div class="skills-layout">
+          <div class="skills-main">
+            <h3>Business & Marketing Skills</h3>
+            <div class="skill-row"><strong>Markt- & Wettbewerbsanalyse</strong><span>Marktpotenziale, Kundenbedürfnisse, Wettbewerbsumfeld und Wachstumsmöglichkeiten strukturiert bewerten.</span></div>
+            <div class="skill-row"><strong>CRM & Kampagnen</strong><span>Digitale Kampagnen planen, umsetzen und Performance mit Mailchimp und Salesforce Marketing Cloud auswerten.</span></div>
+            <div class="skill-row"><strong>Strategische Analyse</strong><span>Komplexe Informationen verdichten und daraus klare, managementgerechte Handlungsempfehlungen ableiten.</span></div>
+            <div class="skill-row"><strong>Cross-funktionale Zusammenarbeit</strong><span>Erfahrung in der Zusammenarbeit mit Marketing, Sales, E-Commerce und internationalen Stakeholdern.</span></div>
+            <div class="skill-row"><strong>Supply-Chain-Verständnis</strong><span>Akademische Kenntnisse aus Strategic Supply Chain Management und Bachelorarbeit zu Supply-Chain-Herausforderungen.</span></div>
+          </div>
+
+          <div class="skills-side">
+            <h3>Tools & Arbeitsweise</h3>
+            <div class="tool-chips">
+              <span class="tool-chip">Excel + Solver</span>
+              <span class="tool-chip">PowerPoint</span>
+              <span class="tool-chip">Mailchimp</span>
+              <span class="tool-chip">Salesforce Marketing Cloud</span>
+              <span class="tool-chip">Canva</span>
+              <span class="tool-chip">AI Tools</span>
+            </div>
+
+            <div class="soft-grid">
+              <div class="soft-card"><strong>Analytisch</strong><span>Unklare Fragen strukturieren und Optionen bewerten.</span></div>
+              <div class="soft-card"><strong>Kommunikativ</strong><span>Komplexe Themen verständlich und adressatengerecht vermitteln.</span></div>
+              <div class="soft-card"><strong>Lernbereit</strong><span>Neue Tools und Themen schnell eigenständig erschließen.</span></div>
+              <div class="soft-card"><strong>Teamorientiert</strong><span>Unterschiedliche Perspektiven zusammenbringen.</span></div>
+              <div class="soft-card"><strong>Hands-on</strong><span>Ideen pragmatisch testen und zuverlässig umsetzen.</span></div>
+              <div class="soft-card"><strong>International</strong><span>Sicher in interkulturellen Arbeitsumfeldern agieren.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="de-experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Praxiserfahrung</div>
+            <h2>Zwei Stationen, die sich sinnvoll ergänzen.</h2>
+          </div>
+          <p>
+            Tokyo Headspa steht stärker für operative Marketingumsetzung und CRM.
+            BRITA steht stärker für Marktanalyse, kommerzielle Bewertung und strategische Entscheidungsunterstützung.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <div class="experience-card green">
+            <div class="experience-top">
+              <div><h3>Tokyo Headspa</h3><div class="role">Marketing Intern · Sydney</div></div>
+              <span class="year-tag">2026</span>
+            </div>
+            <ul>
+              <li>Wettbewerbs- und Marktanalysen</li>
+              <li>Empfehlungen zur Erweiterung des Marken- und Serviceportfolios</li>
+              <li>Social-Media- und EDM-Kampagnenmanagement</li>
+              <li>Performance-Analyse mit Mailchimp und Salesforce Marketing Cloud</li>
+              <li>Influencer Research und KI-gestützte Content-Ideen</li>
+            </ul>
+            <div class="experience-note">Schwerpunkt: operative Umsetzung, digitales Marketing, CRM und schnelles Arbeiten in einem dynamischen Umfeld.</div>
+          </div>
+
+          <div class="experience-card light">
+            <div class="experience-top">
+              <div><h3>BRITA Australia</h3><div class="role">Sales & Marketing Assistant · Sydney</div></div>
+              <span class="year-tag">2022–2023</span>
+            </div>
+            <ul>
+              <li>Markt-, Kunden- und Wettbewerbsanalysen</li>
+              <li>Machbarkeitsbewertung eines potenziellen Subscription-Modells</li>
+              <li>Analyse von Markt-, Konsumenten- und Brand-Tracking-Daten</li>
+              <li>Managementgerechte Aufbereitung zentraler Erkenntnisse</li>
+              <li>Cross-funktionale Zusammenarbeit mit Marketing, Sales und E-Commerce</li>
+            </ul>
+            <div class="experience-note">Schwerpunkt: Commercial Analysis, Consumer Insights und strukturierte Entscheidungsunterstützung.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="de-case">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Beispielprojekt</div>
+            <h2>BRITA Subscription Case</h2>
+          </div>
+          <p>
+            Ein Beispiel dafür, wie ich arbeite: eine offene Business-Frage strukturieren, Markt- und Kundendaten analysieren,
+            Potenzial bewerten und daraus eine fundierte Empfehlung ableiten.
+          </p>
+        </div>
+
+        <div class="case">
+          <div class="case-flow">
+            <div class="case-step"><div class="num">01 · FRAGE</div><h4>Potenzial verstehen</h4><p>Wie attraktiv wäre ein Subscription-Modell im australischen Markt?</p></div>
+            <div class="case-step"><div class="num">02 · ANALYSE</div><h4>Markt strukturieren</h4><p>Kundensegmente, Kaufverhalten, Wettbewerb und Marktpotenzial analysieren.</p></div>
+            <div class="case-step"><div class="num">03 · BEWERTUNG</div><h4>Commercial Logic</h4><p>Mehrwert, Adoptionshürden und kommerzielles Potenzial gegeneinander abwägen.</p></div>
+            <div class="case-step"><div class="num">04 · EMPFEHLUNG</div><h4>Entscheidung unterstützen</h4><p>Erkenntnisse verdichten und managementgerecht präsentieren.</p></div>
+          </div>
+          <div class="case-result"><strong>Ergebnis</strong><span>Fundierte No-Go-Empfehlung auf Basis des analysierten Potenzials und der erwarteten Adoption.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="de-why">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Warum Pohl-Boskamp</div>
+            <h2>Genau die Breite, die ich für meinen Einstieg suche.</h2>
+          </div>
+          <p>
+            Besonders attraktiv finde ich die Verbindung aus inhabergeführtem Mittelstand, eigener Produktion,
+            bekannten Marken und der Möglichkeit, verschiedene kaufmännische Bereiche kennenzulernen.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card"><div class="num">01</div><h3>Frühe Verantwortung</h3><p>Von Beginn an eigene Aufgaben und Projekte übernehmen statt nur zuzuschauen.</p></div>
+          <div class="why-card"><div class="num">02</div><h3>Breiter Unternehmensblick</h3><p>Marketing & Vertrieb vertiefen und gleichzeitig die Schnittstellen zu Logistik, Einkauf und Controlling verstehen.</p></div>
+          <div class="why-card"><div class="num">03</div><h3>Produkte mit Bedeutung</h3><p>In einem Pharmaunternehmen arbeiten, bei dem Qualität und Verfügbarkeit der Produkte unmittelbar relevant sind.</p></div>
+        </div>
+
+        <div class="why-highlight">
+          <strong>Mein Wunschschwerpunkt: Marketing & Vertrieb</strong>
+          <p>Meine praktische Erfahrung ist hier am stärksten. Gleichzeitig sehe ich mein Supply-Chain-Verständnis als zusätzlichen Vorteil, um Entscheidungen in einem produzierenden Unternehmen ganzheitlicher zu verstehen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="de-contact">
+      <div class="wrap">
+        <div class="contact">
+          <div><h2>Vielen Dank für Ihre Zeit.</h2><p>Ich freue mich darauf, Pohl-Boskamp und das Traineeprogramm persönlich kennenzulernen.</p></div>
+          <div class="contact-links">
+            <a href="mailto:jan.kraege@icloud.com">E-Mail</a>
+            <a href="tel:+4915226436229">Telefon</a>
+            <a href="https://www.linkedin.com/in/jan-kraege" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer><span>Jan Kraege · Bewerbung Pohl-Boskamp</span><span>Marketing & Vertrieb · 2026</span></footer>
   </div>
 
-  <div class="lang-page" data-lang="en">
-    <main id="top-en">
-      <header class="hero">
-        <div>
-          <div class="eyebrow"><span class="eyebrow-dot"></span>Application · Commercial Graduate Programme</div>
-          <h1>Understand marketing.<br><span>Think business further.</span></h1>
-          <p>I combine hands-on experience in marketing, market analysis and CRM with strategic thinking, international experience and an additional understanding of supply chain topics. I want to develop this combination further at Pohl-Boskamp through a broad commercial graduate programme.</p>
-          <div class="actions"><a class="btn btn-primary" href="#profil">My Profile</a><a class="btn" href="#weg">View Journey</a></div>
+  <!-- ENGLISH -->
+  <div class="page" data-lang="en">
+    <header class="hero" id="en-top">
+      <div class="hero-copy">
+        <div class="eyebrow">Application · Commercial Graduate Programme</div>
+        <h1>Understand marketing.<br><span>Think about business end to end.</span></h1>
+        <p>
+          I combine hands-on experience in marketing, market analysis and CRM with strategic thinking,
+          international experience and an additional understanding of supply chain topics.
+          My preferred focus is Marketing & Commercial, while I am also interested in the interfaces with logistics,
+          procurement, controlling and other business functions.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#en-journey">My Journey</a>
+          <a class="btn" href="#en-skills">My Skills</a>
         </div>
-        <aside class="hero-card">
-          <div><div class="hero-mini">My Focus</div><h2>Marketing & Commercial as my focus.<br>Analysis, strategy and supply chain as complementary strengths.</h2></div>
-          <div class="metric-grid">
-            <div class="metric"><strong>Master</strong><span>Master of Management · UTS</span></div>
-            <div class="metric"><strong>International</strong><span>Study & work experience in Australia</span></div>
-            <div class="metric"><strong>Marketing</strong><span>CRM, campaigns, market & competitor analysis</span></div>
-            <div class="metric"><strong>Strategy</strong><span>Business cases & management recommendations</span></div>
+      </div>
+
+      <div class="hero-side">
+        <div class="focus-card">
+          <div>
+            <div class="small">My Focus</div>
+            <h2>Marketing & Commercial at the core.<br>Strategy and supply chain as complementary perspectives.</h2>
           </div>
-        </aside>
-      </header>
-
-      <section id="profil-en"><div class="wrap">
-        <div class="section-head"><div><div class="kicker">My Profile</div><h2>Analytical, communicative and hands-on.</h2></div><p>My profile is deliberately broad: I bring practical marketing experience, enjoy working in a structured way with data and market information, and like translating ideas into concrete recommendations and actions. My studies and international experience have taught me to adapt quickly to new topics and working environments.</p></div>
-        <div class="grid-3">
-          <div class="card"><div class="icon">01</div><h3>Analytical</h3><p>I structure complex questions, compare options and derive clear recommendations from data and market information.</p></div>
-          <div class="card"><div class="icon">02</div><h3>Communicative</h3><p>I enjoy working with different teams and stakeholders and can present results clearly and appropriately for the audience.</p></div>
-          <div class="card"><div class="icon">03</div><h3>Independent</h3><p>I take ownership, learn new topics quickly and keep projects on track even when priorities change.</p></div>
-        </div>
-      </div></section>
-
-      <section id="staerken-en"><div class="wrap">
-        <div class="section-head"><div><div class="kicker">Personal Strengths</div><h2>What defines the way I work with others.</h2></div><p>Alongside my professional experience, I bring qualities that help me learn new tasks quickly, bring different perspectives together and execute reliably.</p></div>
-        <div class="showcase-shell"><div class="strength-grid">
-          <div class="strength-card"><div class="strength-icon">💡</div><h3>Creativity</h3><p>Develop new ideas and view established processes from a different perspective.</p></div>
-          <div class="strength-card"><div class="strength-icon">🌍</div><h3>Intercultural Communication</h3><p>Work confidently in international teams and across different communication styles.</p></div>
-          <div class="strength-card"><div class="strength-icon">🤝</div><h3>Teamwork</h3><p>Bring different perspectives together and align them toward shared goals.</p></div>
-          <div class="strength-card"><div class="strength-icon">📚</div><h3>Learning Agility</h3><p>Learn new tools, technologies and complex topics quickly and independently.</p></div>
-          <div class="strength-card"><div class="strength-icon">🧭</div><h3>Structure</h3><p>Turn unclear requirements into clear work packages and sound decisions.</p></div>
-          <div class="strength-card"><div class="strength-icon">⚡</div><h3>Execution</h3><p>Test and prioritise ideas pragmatically and deliver them reliably.</p></div>
-          <div class="strength-card"><div class="strength-icon">🎤</div><h3>Communication</h3><p>Explain complex topics clearly for different audiences and communicate them confidently.</p></div>
-        </div></div>
-      </div></section>
-
-      <section id="weg-en"><div class="wrap">
-        <div class="section-head"><div><div class="kicker">My Journey</div><h2>An international journey across marketing, strategy and supply chain.</h2></div><p>My journey combines business education, international experience and hands-on marketing work. The stages show how my profile has developed step by step.</p></div>
-        <div class="timeline-shell"><div class="timeline">
-          <div class="timeline-item alt"><div class="timeline-badge">🇩🇪</div><h3>Bachelor</h3><div class="sub">Business Administration</div><div class="date">2020–2024</div></div>
-          <div class="timeline-item"><div class="timeline-badge">✈️</div><h3>UTS Exchange</h3><div class="sub">Sydney</div><div class="date">2022</div></div>
-          <div class="timeline-item alt"><div class="timeline-badge">💧</div><h3>BRITA</h3><div class="sub">Sales & Marketing</div><div class="date">2022–2023</div></div>
-          <div class="timeline-item"><div class="timeline-badge">📘</div><h3>Thesis</h3><div class="sub">Australian Supply Chains</div><div class="date">2024</div></div>
-          <div class="timeline-item alt"><div class="timeline-badge">🎓</div><h3>Master</h3><div class="sub">UTS Management · Strategy &amp; SCM</div><div class="date">2025–2026</div></div>
-          <div class="timeline-item"><div class="timeline-badge">⚡</div><h3>Tokyo Headspa</h3><div class="sub">Digital Marketing</div><div class="date">2026</div></div>
-          <div class="timeline-item alt"><div class="timeline-badge">🏥</div><h3>Next Step</h3><div class="sub">Pohl-Boskamp</div><div class="date">Graduate Programme</div></div>
-        </div></div>
-      </div></section>
-
-      <section id="skills-en"><div class="wrap">
-        <div class="section-head"><div><div class="kicker">Professional Skills</div><h2>Skills I can contribute from day one.</h2></div><p>For me, it is not enough to list tools — what matters is how I use them in practice.</p></div>
-        <div class="skills-split">
-          <div class="skill-panel"><h3>Business & Marketing Skills</h3>
-            <div class="skill"><b>Market & Competitor Analysis</b><span>Structured assessment of market potential, competitive dynamics, customer needs and growth opportunities.</span></div>
-            <div class="skill"><b>CRM & Campaigns</b><span>Experience with Mailchimp and Salesforce Marketing Cloud as well as planning, execution and evaluation of digital campaigns.</span></div>
-            <div class="skill"><b>Strategic Decision Support</b><span>Translate complex insights into clear recommendations and management-ready presentations.</span></div>
-            <div class="skill"><b>Cross-functional Collaboration</b><span>Collaboration with Marketing, Sales and E-Commerce across different stakeholders.</span></div>
-            <div class="skill"><b>Supply Chain Understanding</b><span>Academic knowledge from Strategic Supply Chain Management and a bachelor thesis on supply chain challenges in the Australian market.</span></div>
-          </div>
-          <div class="skill-panel alt"><h3>Tools & Working Style</h3>
-            <div class="skill"><b>Excel</b><span>Analysis of business questions, including Solver.</span></div>
-            <div class="skill"><b>PowerPoint</b><span>Structured, management-ready presentation of findings and recommendations.</span></div>
-            <div class="skill"><b>Mailchimp</b><span>EDM campaigns and performance analysis.</span></div>
-            <div class="skill"><b>Salesforce Marketing Cloud</b><span>Support for digital CRM and marketing activities.</span></div>
-            <div class="skill"><b>Canva & AI Tools</b><span>Content creation, research and more efficient marketing workflows.</span></div>
-            <div class="skill"><b>German & English</b><span>Native German, English C1 and international work experience.</span></div>
+          <div class="focus-bottom">
+            <span class="pill">Marketing</span>
+            <span class="pill">CRM</span>
+            <span class="pill">Market Analysis</span>
+            <span class="pill">Strategy</span>
+            <span class="pill">Supply Chain</span>
           </div>
         </div>
-      </div></section>
 
-      <section id="erfahrung-en"><div class="wrap">
-        <div class="section-head"><div><div class="kicker">Experience</div><h2>Hands-on marketing and strategic analysis.</h2></div><p>My two roles in Australia complement each other well: Tokyo Headspa represents hands-on execution and digital marketing, while BRITA represents analysis and commercial decision support.</p></div>
-        <div class="split">
-          <div class="panel panel-dark"><h3>Tokyo Headspa · Marketing</h3><ul>
-            <li>Market and competitor analysis</li><li>Recommendations for brand and service portfolio expansion</li><li>Social media and EDM campaign management</li><li>Performance analysis with Mailchimp and Salesforce Marketing Cloud</li><li>Influencer research and shortlisting of potential collaboration partners</li><li>AI-supported content ideation and more efficient workflows</li>
-          </ul></div>
-          <div class="panel"><h3>BRITA Australia · Sales & Marketing</h3><ul>
-            <li>Analysis of a potential subscription model</li><li>Market, customer and competitor analysis</li><li>Analysis of market, consumer and brand-tracking data</li><li>Preparation of key insights for management decisions</li><li>Cross-functional collaboration with Marketing, Sales and E-Commerce</li><li>Experience in an internationally operating consumer goods company</li>
-          </ul></div>
+        <div class="facts-card">
+          <div class="fact"><strong>Master</strong><span>Master of Management · UTS</span></div>
+          <div class="fact"><strong>International</strong><span>Study & work experience in Australia</span></div>
+          <div class="fact"><strong>Marketing</strong><span>Tokyo Headspa & BRITA</span></div>
+          <div class="fact"><strong>Languages</strong><span>German · English C1</span></div>
         </div>
-      </div></section>
+      </div>
+    </header>
 
-      <section id="case-en"><div class="wrap"><div class="case">
-        <div class="section-head" style="margin-bottom:0"><div><div class="kicker">Project Example</div><h2>BRITA Subscription Case</h2></div><p>A project that illustrates how I work: structure an open business question, analyse the relevant information and turn it into a clear recommendation.</p></div>
-        <div class="case-grid">
-          <div class="case-step"><div class="nr">01 · QUESTION</div><h4>Understand the potential</h4><p>Assessing the attractiveness of a potential subscription model in the Australian market.</p></div>
-          <div class="case-step"><div class="nr">02 · ANALYSIS</div><h4>Structure the market</h4><p>Analysing market potential, customer segments, purchasing behaviour and competition.</p></div>
-          <div class="case-step"><div class="nr">03 · ASSESSMENT</div><h4>Commercial Logic</h4><p>Assessing commercial potential and possible adoption barriers.</p></div>
-          <div class="case-step"><div class="nr">04 · RECOMMENDATION</div><h4>Support the decision</h4><p>Synthesising results and deriving a well-founded strategic recommendation.</p></div>
+    <section id="en-journey">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">My Journey</div>
+            <h2>A clear progression from marketing to broader business understanding.</h2>
+          </div>
+          <p>
+            My profile has developed step by step: from a business degree with a marketing focus,
+            to international practical experience, to a master's with strategy and supply chain content.
+          </p>
         </div>
-      </div></div></section>
 
-      <section id="motivation-en"><div class="wrap"><blockquote class="quote">“I want to start my career in an environment where analysis does not end with a concept, but leads to concrete decisions, better processes and visible results.”<small>My motivation for the commercial graduate programme at Pohl-Boskamp</small></blockquote></div></section>
-
-      <section><div class="wrap">
-        <div class="section-head"><div><div class="kicker">Why Pohl-Boskamp</div><h2>An environment that fits the way I want to start my career.</h2></div><p>I am particularly attracted by the combination of an owner-managed mid-sized company, established brands, in-house production and an international orientation. The graduate programme offers exactly the breadth I am looking for at the start of my career.</p></div>
-        <div class="grid-4">
-          <div class="why-card"><span>01</span><h3>Early Responsibility</h3><p>Take ownership of projects and contribute actively from the start.</p></div>
-          <div class="why-card"><span>02</span><h3>Broad Development</h3><p>Deepen my marketing and commercial expertise while gaining exposure to adjacent functions.</p></div>
-          <div class="why-card"><span>03</span><h3>Manufacturing Environment</h3><p>Understand commercial decisions in the context of real products, processes and supply chains.</p></div>
-          <div class="why-card"><span>04</span><h3>Meaningful Pharma</h3><p>Work with brands and products whose quality and availability are directly relevant to people.</p></div>
+        <div class="journey">
+          <div class="journey-line"></div>
+          <div class="journey-grid">
+            <div class="journey-item"><div class="journey-icon">🇩🇪</div><h3>Bachelor</h3><p>Business Administration<br>2020–2024</p></div>
+            <div class="journey-item"><div class="journey-icon">✈️</div><h3>UTS Exchange</h3><p>Sydney · Marketing focus<br>2022</p></div>
+            <div class="journey-item"><div class="journey-icon">💧</div><h3>BRITA</h3><p>Sales & Marketing<br>2022–2023</p></div>
+            <div class="journey-item"><div class="journey-icon">📘</div><h3>Bachelor Thesis</h3><p>Australian Supply Chains<br>2024</p></div>
+            <div class="journey-item"><div class="journey-icon">🎓</div><h3>Master</h3><p>UTS · Strategy & SCM<br>2025–2026</p></div>
+            <div class="journey-item"><div class="journey-icon">⚡</div><h3>Tokyo Headspa</h3><p>Digital Marketing<br>2026</p></div>
+            <div class="journey-item"><div class="journey-icon">🏥</div><h3>Next Step</h3><p>Pohl-Boskamp<br>Graduate Programme</p></div>
+          </div>
         </div>
-      </div></section>
+      </div>
+    </section>
 
-      <section id="contact-en"><div class="wrap"><div class="contact">
-        <div><h2>Thank you for your time.</h2><p>I look forward to the opportunity to learn more about Pohl-Boskamp and the graduate programme in person.</p></div>
-        <div class="contact-links"><a href="mailto:jan.kraege@icloud.com">Email</a><a href="tel:+4915226436229">Phone</a><a href="https://www.linkedin.com/in/jan-kraege" target="_blank" rel="noopener">LinkedIn</a></div>
-      </div></div></section>
-    </main>
+    <section id="en-skills">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">What I Bring</div><h2>Professional skills and the way I work.</h2></div>
+          <p>Instead of many individual cards, my strengths are grouped clearly: professional capabilities on the left, tools and working style on the right.</p>
+        </div>
+
+        <div class="skills-layout">
+          <div class="skills-main">
+            <h3>Business & Marketing Skills</h3>
+            <div class="skill-row"><strong>Market & Competitor Analysis</strong><span>Assess market potential, customer needs, competitive dynamics and growth opportunities in a structured way.</span></div>
+            <div class="skill-row"><strong>CRM & Campaigns</strong><span>Plan and execute digital campaigns and analyse performance with Mailchimp and Salesforce Marketing Cloud.</span></div>
+            <div class="skill-row"><strong>Strategic Analysis</strong><span>Synthesise complex information and translate it into clear, management-ready recommendations.</span></div>
+            <div class="skill-row"><strong>Cross-functional Collaboration</strong><span>Experience working with Marketing, Sales, E-Commerce and international stakeholders.</span></div>
+            <div class="skill-row"><strong>Supply Chain Understanding</strong><span>Academic knowledge from Strategic Supply Chain Management and a bachelor thesis on supply chain challenges.</span></div>
+          </div>
+
+          <div class="skills-side">
+            <h3>Tools & Working Style</h3>
+            <div class="tool-chips">
+              <span class="tool-chip">Excel + Solver</span>
+              <span class="tool-chip">PowerPoint</span>
+              <span class="tool-chip">Mailchimp</span>
+              <span class="tool-chip">Salesforce Marketing Cloud</span>
+              <span class="tool-chip">Canva</span>
+              <span class="tool-chip">AI Tools</span>
+            </div>
+            <div class="soft-grid">
+              <div class="soft-card"><strong>Analytical</strong><span>Structure unclear questions and assess options.</span></div>
+              <div class="soft-card"><strong>Communicative</strong><span>Explain complex topics clearly to different audiences.</span></div>
+              <div class="soft-card"><strong>Curious</strong><span>Learn new tools and topics quickly and independently.</span></div>
+              <div class="soft-card"><strong>Team-oriented</strong><span>Bring different perspectives together.</span></div>
+              <div class="soft-card"><strong>Hands-on</strong><span>Test ideas pragmatically and execute reliably.</span></div>
+              <div class="soft-card"><strong>International</strong><span>Work confidently in intercultural environments.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="en-experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">Experience</div><h2>Two roles that complement each other well.</h2></div>
+          <p>Tokyo Headspa represents hands-on marketing execution and CRM, while BRITA represents market analysis, commercial assessment and strategic decision support.</p>
+        </div>
+
+        <div class="experience-grid">
+          <div class="experience-card green">
+            <div class="experience-top"><div><h3>Tokyo Headspa</h3><div class="role">Marketing Intern · Sydney</div></div><span class="year-tag">2026</span></div>
+            <ul>
+              <li>Market and competitor analysis</li>
+              <li>Recommendations for brand and service portfolio expansion</li>
+              <li>Social media and EDM campaign management</li>
+              <li>Performance analysis with Mailchimp and Salesforce Marketing Cloud</li>
+              <li>Influencer research and AI-supported content ideas</li>
+            </ul>
+            <div class="experience-note">Focus: hands-on execution, digital marketing, CRM and fast-paced work in a dynamic environment.</div>
+          </div>
+
+          <div class="experience-card light">
+            <div class="experience-top"><div><h3>BRITA Australia</h3><div class="role">Sales & Marketing Assistant · Sydney</div></div><span class="year-tag">2022–2023</span></div>
+            <ul>
+              <li>Market, customer and competitor analysis</li>
+              <li>Feasibility assessment of a potential subscription model</li>
+              <li>Analysis of market, consumer and brand-tracking data</li>
+              <li>Management-ready preparation of key insights</li>
+              <li>Cross-functional collaboration with Marketing, Sales and E-Commerce</li>
+            </ul>
+            <div class="experience-note">Focus: commercial analysis, consumer insights and structured decision support.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="en-case">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">Project Example</div><h2>BRITA Subscription Case</h2></div>
+          <p>An example of how I work: structure an open business question, analyse market and customer data, assess potential and turn it into a well-founded recommendation.</p>
+        </div>
+        <div class="case">
+          <div class="case-flow">
+            <div class="case-step"><div class="num">01 · QUESTION</div><h4>Understand the potential</h4><p>How attractive would a subscription model be in the Australian market?</p></div>
+            <div class="case-step"><div class="num">02 · ANALYSIS</div><h4>Structure the market</h4><p>Analyse customer segments, purchasing behaviour, competition and market potential.</p></div>
+            <div class="case-step"><div class="num">03 · ASSESSMENT</div><h4>Commercial logic</h4><p>Balance customer value, adoption barriers and commercial potential.</p></div>
+            <div class="case-step"><div class="num">04 · RECOMMENDATION</div><h4>Support the decision</h4><p>Synthesise findings and present them in a management-ready way.</p></div>
+          </div>
+          <div class="case-result"><strong>Outcome</strong><span>Evidence-based no-go recommendation based on the analysed potential and expected adoption.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="en-why">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">Why Pohl-Boskamp</div><h2>The breadth I am looking for at the start of my career.</h2></div>
+          <p>I am particularly attracted by the combination of an owner-managed mid-sized company, in-house production, established brands and the opportunity to learn across different business functions.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-card"><div class="num">01</div><h3>Early Responsibility</h3><p>Take ownership of projects and tasks from the beginning rather than only observing.</p></div>
+          <div class="why-card"><div class="num">02</div><h3>Broader Business Perspective</h3><p>Deepen Marketing & Commercial while understanding the interfaces with logistics, procurement and controlling.</p></div>
+          <div class="why-card"><div class="num">03</div><h3>Meaningful Products</h3><p>Work in pharma, where product quality and availability are directly relevant to people.</p></div>
+        </div>
+        <div class="why-highlight">
+          <strong>My preferred focus: Marketing & Commercial</strong>
+          <p>This is where my practical experience is strongest. At the same time, I see my supply chain understanding as an additional advantage for understanding decisions in a manufacturing business more holistically.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="en-contact">
+      <div class="wrap">
+        <div class="contact">
+          <div><h2>Thank you for your time.</h2><p>I look forward to the opportunity to learn more about Pohl-Boskamp and the graduate programme in person.</p></div>
+          <div class="contact-links">
+            <a href="mailto:jan.kraege@icloud.com">Email</a>
+            <a href="tel:+4915226436229">Phone</a>
+            <a href="https://www.linkedin.com/in/jan-kraege" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer><span>Jan Kraege · Application Pohl-Boskamp</span><span>Marketing & Commercial · 2026</span></footer>
   </div>
 
   <script>
     const root = document.documentElement;
     const buttons = document.querySelectorAll('[data-set-lang]');
+    const navLinks = document.getElementById('navLinks');
+
+    const nav = {
+      de: [
+        ['Werdegang','#de-journey'],
+        ['Skills','#de-skills'],
+        ['Erfahrung','#de-experience'],
+        ['Case','#de-case'],
+        ['Motivation','#de-why']
+      ],
+      en: [
+        ['Journey','#en-journey'],
+        ['Skills','#en-skills'],
+        ['Experience','#en-experience'],
+        ['Case','#en-case'],
+        ['Motivation','#en-why']
+      ]
+    };
+
+    function renderNav(lang){
+      navLinks.innerHTML = nav[lang].map(([label,href]) => `<a href="${href}">${label}</a>`).join('');
+    }
 
     function setLanguage(lang){
-      root.setAttribute('data-language', lang);
-      root.setAttribute('lang', lang);
-      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.setLang === lang));
+      root.setAttribute('data-language',lang);
+      root.setAttribute('lang',lang);
+      buttons.forEach(btn=>btn.classList.toggle('active',btn.dataset.setLang===lang));
+      renderNav(lang);
+      localStorage.setItem('preferredLanguage',lang);
       document.title = lang === 'de'
         ? 'Jan Kraege | Bewerbung Pohl-Boskamp'
         : 'Jan Kraege | Application Pohl-Boskamp';
-      localStorage.setItem('preferredLanguage', lang);
+      window.scrollTo({top:0,behavior:'instant'});
     }
 
     const saved = localStorage.getItem('preferredLanguage');
     setLanguage(saved === 'en' ? 'en' : 'de');
-
-    buttons.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.setLang)));
+    buttons.forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.setLang)));
   </script>
 </body>
 </html>
