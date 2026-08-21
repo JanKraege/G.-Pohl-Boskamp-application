@@ -121,29 +121,44 @@
 
     .showcase-shell{
       background:rgba(255,255,255,.56);border:1px solid rgba(220,207,190,.75);
-      border-radius:38px;padding:22px;box-shadow:0 10px 26px rgba(31,42,51,.05)
+      border-radius:38px;padding:30px;box-shadow:0 10px 26px rgba(31,42,51,.05)
     }
     .strength-grid{
-      display:grid;grid-template-columns:repeat(7,minmax(145px,1fr));gap:18px
+      display:grid;grid-template-columns:repeat(4,minmax(210px,1fr));gap:24px;align-items:stretch
     }
     .strength-card{
       background:var(--card);border:1px solid rgba(220,207,190,.95);border-radius:28px;
-      padding:22px 18px 24px;text-align:center;min-height:280px;
-      display:flex;flex-direction:column;align-items:center
+      padding:26px 22px 30px;text-align:center;min-height:340px;
+      display:flex;flex-direction:column;align-items:center;justify-content:flex-start
     }
     .strength-icon{
-      width:104px;height:104px;border-radius:50%;display:grid;place-items:center;
-      font-size:44px;margin-bottom:18px
+      width:112px;height:112px;border-radius:50%;display:grid;place-items:center;
+      font-size:46px;margin-bottom:20px;flex-shrink:0
     }
     .strength-card:nth-child(odd) .strength-icon{background:var(--berry-soft)}
     .strength-card:nth-child(even) .strength-icon{background:var(--forest-soft)}
-    .strength-card h3{margin:0 0 10px;font-size:20px;line-height:1.15}
-    .strength-card p{margin:0;color:#68737b;font-size:15px;line-height:1.55}
+    .strength-card h3{
+      margin:0 0 12px;
+      font-size:20px;
+      line-height:1.18;
+      min-height:48px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center
+    }
+    .strength-card p{
+      margin:0;
+      color:#68737b;
+      font-size:15px;
+      line-height:1.65;
+      max-width:240px
+    }
 
     .timeline-shell{overflow-x:auto}
     .timeline{
-      position:relative;display:grid;grid-template-columns:repeat(8,minmax(150px,1fr));
-      gap:22px;min-width:1180px;padding:12px 10px 8px
+      position:relative;display:grid;grid-template-columns:repeat(7,minmax(135px,1fr));
+      gap:18px;min-width:980px;padding:12px 10px 8px
     }
     .timeline:before{
       content:"";position:absolute;left:40px;right:40px;top:72px;height:8px;
@@ -207,11 +222,11 @@
     @media(max-width:1100px){
       .hero,.section-head,.skills-split,.split{grid-template-columns:1fr}
       .grid-3,.grid-4,.case-grid{grid-template-columns:1fr 1fr}
-      .strength-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .strength-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .nav-links{display:none}
     }
     @media(max-width:800px){
-      .strength-grid{grid-template-columns:1fr 1fr}
+      .strength-grid{grid-template-columns:1fr}
       .grid-3,.grid-4,.case-grid{grid-template-columns:1fr}
       .metric-grid{grid-template-columns:1fr}
       .contact{flex-direction:column;align-items:flex-start}
@@ -221,7 +236,8 @@
       .hero{padding:58px 20px 42px}
       .wrap{padding:0 20px}
       h1{font-size:44px}
-      .strength-grid{grid-template-columns:1fr}
+      .showcase-shell{padding:20px}
+      .strength-card{min-height:auto}
     }
   </style>
 </head>
@@ -295,10 +311,9 @@
           <div class="timeline-item"><div class="timeline-badge">✈️</div><h3>UTS Exchange</h3><div class="sub">Sydney</div><div class="date">2022</div></div>
           <div class="timeline-item alt"><div class="timeline-badge">💧</div><h3>BRITA</h3><div class="sub">Sales & Marketing</div><div class="date">2022–2023</div></div>
           <div class="timeline-item"><div class="timeline-badge">📘</div><h3>Thesis</h3><div class="sub">Australische Supply Chains</div><div class="date">2024</div></div>
-          <div class="timeline-item alt"><div class="timeline-badge">🎓</div><h3>Master</h3><div class="sub">UTS Management</div><div class="date">2025–2026</div></div>
-          <div class="timeline-item"><div class="timeline-badge">🌐</div><h3>Strategy & SCM</h3><div class="sub">Internationaler Fokus</div><div class="date">2025–2026</div></div>
-          <div class="timeline-item alt"><div class="timeline-badge">⚡</div><h3>Tokyo Headspa</h3><div class="sub">Digital Marketing</div><div class="date">2026</div></div>
-          <div class="timeline-item"><div class="timeline-badge">🏥</div><h3>Nächster Schritt</h3><div class="sub">Pohl-Boskamp</div><div class="date">Traineeprogramm</div></div>
+          <div class="timeline-item alt"><div class="timeline-badge">🎓</div><h3>Master</h3><div class="sub">UTS Management · Strategy &amp; SCM</div><div class="date">2025–2026</div></div>
+          <div class="timeline-item"><div class="timeline-badge">⚡</div><h3>Tokyo Headspa</h3><div class="sub">Digital Marketing</div><div class="date">2026</div></div>
+          <div class="timeline-item alt"><div class="timeline-badge">🏥</div><h3>Nächster Schritt</h3><div class="sub">Pohl-Boskamp</div><div class="date">Traineeprogramm</div></div>
         </div></div>
       </div></section>
 
@@ -414,10 +429,9 @@
           <div class="timeline-item"><div class="timeline-badge">✈️</div><h3>UTS Exchange</h3><div class="sub">Sydney</div><div class="date">2022</div></div>
           <div class="timeline-item alt"><div class="timeline-badge">💧</div><h3>BRITA</h3><div class="sub">Sales & Marketing</div><div class="date">2022–2023</div></div>
           <div class="timeline-item"><div class="timeline-badge">📘</div><h3>Thesis</h3><div class="sub">Australian Supply Chains</div><div class="date">2024</div></div>
-          <div class="timeline-item alt"><div class="timeline-badge">🎓</div><h3>Master</h3><div class="sub">UTS Management</div><div class="date">2025–2026</div></div>
-          <div class="timeline-item"><div class="timeline-badge">🌐</div><h3>Strategy & SCM</h3><div class="sub">International Focus</div><div class="date">2025–2026</div></div>
-          <div class="timeline-item alt"><div class="timeline-badge">⚡</div><h3>Tokyo Headspa</h3><div class="sub">Digital Marketing</div><div class="date">2026</div></div>
-          <div class="timeline-item"><div class="timeline-badge">🏥</div><h3>Next Step</h3><div class="sub">Pohl-Boskamp</div><div class="date">Graduate Programme</div></div>
+          <div class="timeline-item alt"><div class="timeline-badge">🎓</div><h3>Master</h3><div class="sub">UTS Management · Strategy &amp; SCM</div><div class="date">2025–2026</div></div>
+          <div class="timeline-item"><div class="timeline-badge">⚡</div><h3>Tokyo Headspa</h3><div class="sub">Digital Marketing</div><div class="date">2026</div></div>
+          <div class="timeline-item alt"><div class="timeline-badge">🏥</div><h3>Next Step</h3><div class="sub">Pohl-Boskamp</div><div class="date">Graduate Programme</div></div>
         </div></div>
       </div></section>
 
